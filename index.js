@@ -38,6 +38,10 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+app.use(cors({
+    origin: ['https://charity-d5gq.onrender.com',"http://localhost:3001"]
+}));
+
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
