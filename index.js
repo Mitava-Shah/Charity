@@ -18,7 +18,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: ['https://charity-d5gq.onrender.com',"http://localhost:3001"]
+    origin: ["*"]
 }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,10 +37,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-
-app.use(cors({
-    origin: ['https://charity-d5gq.onrender.com',"http://localhost:3001"]
-}));
 
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
