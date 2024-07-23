@@ -32,11 +32,10 @@ app.use('/api/images', ImageRouter);
 
 // Serve static files from the React app
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, '/build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
-// The "catchall" handler: for any request that doesn't match one above, send back index.html
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 mongoose.connect(process.env.MONGODB_URI, {
