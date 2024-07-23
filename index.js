@@ -17,9 +17,9 @@ import { ImageRouter } from './routes/image.js';
 const app = express();
 
 app.use(express.json());
-// app.use(cors({
-//     origin: "http://localhost:3000"
-// }));
+app.use(cors({
+    origin: "https://charity-d5gq.onrender.com"
+}));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
