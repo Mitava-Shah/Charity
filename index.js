@@ -18,7 +18,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: "https://charity-d5gq.onrender.com"
+    origin: "https://charity-d5gq.onrender.com",
+    optionsSuccessStatus: 200
 }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
