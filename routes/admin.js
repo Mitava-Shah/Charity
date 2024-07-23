@@ -26,7 +26,7 @@ router.post('/adminsignup', async (req, res) => {
 
 router.post('/adminlogin', async (req, res) => {
    try {const { email, password } = req.body;
-
+console.log("hello")
     const admin = await Admin.findOne({ email });
     if (!admin) {
         return res.status(401).json({ error: "Admin is not registered" });
