@@ -23,11 +23,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/agent', AgentRouter);
-app.use('/donor', DonorRouter);
-app.use('/admin', AdminRouter);
-app.use('/donate', DonationRouter);
-app.use('/images', ImageRouter);
+app.use('/api/agent', AgentRouter);
+app.use('/api/donor', DonorRouter);
+app.use('/api/admin', AdminRouter);
+app.use('/api/donate', DonationRouter);
+app.use('/api/images', ImageRouter);
 
 // Serve static files from the React app
 const __dirname = path.resolve();
